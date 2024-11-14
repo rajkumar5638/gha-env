@@ -12,7 +12,7 @@ jobs:
       MONGODB_CLUSTER_ADDRESS: cluster0.owneh.mongodb.net
       MONGODB_USERNAME: rajkumarsprints
       MONGODB_PASSWORD: t0eUOC1DQeaDN3ZD
-      POET: 8080
+      PORT: 8080
     environment: testing
     runs-on: ubuntu-latest
     steps:
@@ -38,5 +38,5 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "MONGODB_USERNAME: ${{ env.MONGODB_DB_NAME }}"
+          echo "MONGODB_USERNAME: ${{ job.status.env.MONGODB_USERNAME }}"
           echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
